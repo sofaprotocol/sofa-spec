@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA App Manifest",
+  "description": "Manifest used by browsers to decide how to present your SOFA app to the user.",
+  "properties": {
+    "displayName": {
+      "type": "string",
+      "title": "Display Name",
+      "description": "Human-readable app name"
+    },
+    "versions": {
+      "type": "array",
+      "title": "Versions",
+      "description": "List of supported SOFA versions",
+      "items": {
+        "type": "string"
+      }
+    },
+    "avatarUrl": {
+      "type": "string",
+      "title": "Avatar Url",
+      "description": "URL of image to be used as app icon/avatar"
+    },
+    "interfaces": {
+      "type": "array",
+      "title": "Interfaces",
+      "description": "List of user interfaces supported by this app",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ChatBot",
+          "WebView"
+        ]
+      }
+    },
+    "languages": {
+      "type": "array",
+      "title": "Languages",
+      "description": "List of ISO 639-1 codes for supported languages ",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ethereumAddress": {
+      "type": "string",
+      "title": "Ethereum Address",
+      "description": "Ethereum address of app"
+    },
+    "requiresIntroduction": {
+      "type": "boolean",
+      "title": "Requires Introduction",
+      "description": "Flag indicating whether client must first send Initialization message"
+    }
+  },
+  "required": [
+    "displayName",
+    "versions",
+    "avatarUrl",
+    "interfaces",
+    "languages",
+    "ethereumAddress",
+    "requiresIntroduction"
+  ]
+}

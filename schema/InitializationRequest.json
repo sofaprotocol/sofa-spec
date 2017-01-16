@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA::InitializationRequest",
+  "description": "Sent by automated clients if first message recieved from contact is not Initialize.",
+  "properties": {
+    "message": {
+      "type": "string",
+      "title": "Message",
+      "description": "Plain text message shown to recipient"
+    }
+  },
+  "required": [
+  ]
+}

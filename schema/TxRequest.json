@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TxRequest",
+  "description": "Request an Ethereum transaction",
+  "properties": {
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "description": "ISO 4217 currency code. Specifies the denomination of request value."
+    },
+    "value": {
+      "type": "number",
+      "title": "Value",
+      "description": "Value of transaction in given currency (fractional numbers allowed)"
+    },
+    "destinationAddress": {
+      "type": "string",
+      "title": "Destination Address",
+      "description": "Ethereum address of recipient"
+    },
+    "senderAddress": {
+      "type": "string",
+      "title": "Sender Address",
+      "description": "Ethereum address of sender"
+    }
+  },
+  "required": [
+    "currency",
+    "value",
+    "destinationAddress",
+    "senderAddress"
+  ]
+}

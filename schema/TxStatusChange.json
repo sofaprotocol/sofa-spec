@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TxStatusChange",
+  "description": "Notification of status change for Ethereum transaction",
+  "properties": {
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "description": "New status of Ethereum transaction"
+    },
+    "txHash": {
+      "type": "string",
+      "title": "Tx Hash",
+      "description": "Transaction hash"
+    },
+    "value": {
+      "type": "number",
+      "title": "Value",
+      "description": "Value of transaction"
+    }
+  },
+  "required": [
+    "status",
+    "txHash",
+    "value"
+  ]
+}
