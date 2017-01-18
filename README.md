@@ -27,6 +27,31 @@ There are 6 top-level types/schemas:
 
 ### SOFA::Message
 
+SOFA::Message is the general use schema that provides all the common messaging functionality.
+All top-level keys are optional. The structure is as follows:
+
+```javascript
+{
+  "body": "…", // text message
+  "controls": [ // list of UI controls to display in client
+    {
+      "type": "…", // supported types: button, group
+      "label": "…", // displayed button text
+      "value": …, // underlying value sent by tapping button
+      "echo": …, // boolean, adds the label value to conversation as a text message when true
+      "controls": …, //nested list of controls inside type "group"
+    }
+  ],
+  "showKeyboard": …, // hints to the recipient whether freeform text responses will be accepted
+  "attachments": [ // images/videos/urls
+     {
+       "type": "image",
+       "url": "…"
+     }
+  ]
+}
+```
+
 Example: A plain text message:
 ```json
 SOFA::Message:{
