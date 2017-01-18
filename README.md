@@ -146,8 +146,7 @@ of type Initialize, which provides context for the bot about who it is speaking 
 
 ```json
 SOFA::Initialize:{
-  "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a",
-  "username": "mark"
+  "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a"
 }
 ```
 
@@ -160,7 +159,7 @@ message containing the requested information.
 
 ```json
 SOFA::InitializationRequest:{
-  "values": ["paymentAddress", "username"]
+  "values": ["paymentAddress"]
 }
 ```
 

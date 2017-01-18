@@ -1,6 +1,8 @@
 
 package com.bakkenbaeck.token.model.sofa;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,37 +16,37 @@ import com.google.gson.annotations.SerializedName;
 public class InitializationRequest {
 
     /**
-     * Message
+     * Values
      * <p>
-     * Plain text message shown to recipient
+     * Values required in the Initialize response
      * 
      */
-    @SerializedName("message")
+    @SerializedName("values")
     @Expose
-    private String message;
+    private List<Object> values = new ArrayList<Object>();
 
     /**
-     * Message
+     * Values
      * <p>
-     * Plain text message shown to recipient
+     * Values required in the Initialize response
      * 
      */
-    public String getMessage() {
-        return message;
+    public List<Object> getValues() {
+        return values;
     }
 
     /**
-     * Message
+     * Values
      * <p>
-     * Plain text message shown to recipient
+     * Values required in the Initialize response
      * 
      */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setValues(List<Object> values) {
+        this.values = values;
     }
 
-    public InitializationRequest withMessage(String message) {
-        this.message = message;
+    public InitializationRequest withValues(List<Object> values) {
+        this.values = values;
         return this;
     }
 

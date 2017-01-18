@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "TxStatusChange",
-  "description": "Notification of status change for Ethereum transaction",
+  "title": "PaymentStatusChange",
+  "description": "Notification of status change for Ethereum payment",
   "properties": {
     "status": {
       "type": "string",

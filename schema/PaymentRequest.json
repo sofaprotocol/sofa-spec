@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "TxRequest",
-  "description": "Request an Ethereum transaction",
+  "title": "PaymentRequest",
+  "description": "Request an Ethereum payment",
   "properties": {
     "currency": {
       "type": "string",

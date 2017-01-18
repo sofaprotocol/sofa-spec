@@ -6,12 +6,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * TxRequest
+ * PaymentRequest
  * <p>
- * Request an Ethereum transaction
+ * Request an Ethereum payment
  * 
  */
-public class TxRequest {
+public class PaymentRequest {
 
     /**
      * Currency
@@ -76,7 +76,7 @@ public class TxRequest {
         this.currency = currency;
     }
 
-    public TxRequest withCurrency(String currency) {
+    public PaymentRequest withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
@@ -103,7 +103,7 @@ public class TxRequest {
         this.value = value;
     }
 
-    public TxRequest withValue(Double value) {
+    public PaymentRequest withValue(Double value) {
         this.value = value;
         return this;
     }
@@ -130,7 +130,7 @@ public class TxRequest {
         this.destinationAddress = destinationAddress;
     }
 
-    public TxRequest withDestinationAddress(String destinationAddress) {
+    public PaymentRequest withDestinationAddress(String destinationAddress) {
         this.destinationAddress = destinationAddress;
         return this;
     }
@@ -157,7 +157,7 @@ public class TxRequest {
         this.senderAddress = senderAddress;
     }
 
-    public TxRequest withSenderAddress(String senderAddress) {
+    public PaymentRequest withSenderAddress(String senderAddress) {
         this.senderAddress = senderAddress;
         return this;
     }

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA::Message",
+  "description": "General-use message structure",
+  "properties": {
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Plain text message to be shown to recipient"
+    },
+    "showKeyboard": {
+      "type": "boolean",
+      "title": "Show Keyboard",
+      "description": "Hint for client about whether arbitrary text responses will be parsed. If false, the client should disable the keyboard/input."
+    },
+    "controls": {
+      "type": "array",
+      "title": "Controls",
+      "description": "List of UI controls to construct in client",
+      "items": {"$ref": "#/definitions/control"}
+    },
+    "attachments": {
+      "type": "array",
+      "title": "Attachments",
+      "description": "List image/video/url attachments"
+    }
+  },
+  "required": [
+  ],
+
+  "definitions": {
+    "control": {
+      "type": "object",
+      "title": "Control",
+      "description": "A UI control instance",
+      "properties": {
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Type of control",
+          "enum": ["button", "group"]
+        },
+        "label": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label/display name of control"
+        },
+        "value": {
+          "type": "string",
+          "title": "Value",
+          "description": "Value for the Command send upon tapping button"
+        },
+        "action": {
+          "type": "string",
+          "title": "Action",
+          "description": "A client-side action"
+        },
+        "controls": {
+          "type": "array",
+          "title": "Controls",
+          "description": "A sub-list of controls within a group",
+          "items": {"$ref": "#/definitions/control"}
+        }
+      },
+      "required": [
+        "type",
+        "label"
+      ]
+    }
+  }
+}

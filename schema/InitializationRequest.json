@@ -4,10 +4,10 @@
   "title": "SOFA::InitializationRequest",
   "description": "Sent by automated clients if first message recieved from contact is not Initialize.",
   "properties": {
-    "message": {
-      "type": "string",
-      "title": "Message",
-      "description": "Plain text message shown to recipient"
+    "values": {
+      "type": "array",
+      "title": "Values",
+      "description": "Values required in the Initialize response"
     }
   },
   "required": [

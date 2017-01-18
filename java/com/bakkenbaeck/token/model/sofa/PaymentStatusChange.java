@@ -6,12 +6,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * TxStatusChange
+ * PaymentStatusChange
  * <p>
- * Notification of status change for Ethereum transaction
+ * Notification of status change for Ethereum payment
  * 
  */
-public class TxStatusChange {
+public class PaymentStatusChange {
 
     /**
      * Status
@@ -66,7 +66,7 @@ public class TxStatusChange {
         this.status = status;
     }
 
-    public TxStatusChange withStatus(String status) {
+    public PaymentStatusChange withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -93,7 +93,7 @@ public class TxStatusChange {
         this.txHash = txHash;
     }
 
-    public TxStatusChange withTxHash(String txHash) {
+    public PaymentStatusChange withTxHash(String txHash) {
         this.txHash = txHash;
         return this;
     }
@@ -120,7 +120,7 @@ public class TxStatusChange {
         this.value = value;
     }
 
-    public TxStatusChange withValue(Double value) {
+    public PaymentStatusChange withValue(Double value) {
         this.value = value;
         return this;
     }

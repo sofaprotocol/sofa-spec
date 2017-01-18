@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA::Command",
+  "description": "Arbitrary text command in response to button tap",
+  "properties": {
+    "value": {
+      "type": "string",
+      "title": "Value",
+      "description": "Value property copied from button that triggered the message"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
