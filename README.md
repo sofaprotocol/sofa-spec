@@ -38,7 +38,6 @@ All top-level keys are optional. The structure is as follows:
       "type": "…", // supported types: button, group
       "label": "…", // displayed button text
       "value": …, // underlying value sent by tapping button
-      "echo": …, // boolean, when true, tapping the button will add the label value to the conversation as if you had typed/sent it by hand
       "controls": …, //nested list of controls inside type "group"
     }
   ],
@@ -123,8 +122,8 @@ Example: Message that adds visible UI controls but has no text message:
 ```json
 SOFA::Message:{
   "controls": [
-    {"type": "button", "label": "Tell me a joke!", "value": "joke", "echo": true},
-    {"type": "button", "label": "Show me a picture!", "value": "picture", "echo": true}
+    {"type": "button", "label": "Tell me a joke!", "value": "joke"},
+    {"type": "button", "label": "Show me a picture!", "value": "picture"}
   ]
 }
 ```
@@ -157,11 +156,11 @@ SOFA::Initialize:{
 
 If an Initialize message has not been sent, or needs to be re-sent, a bot may send
 an InitializationRequest message, which should trigger the client to send an Initialize
-message.
+message containing the requested information.
 
 ```json
 SOFA::InitializationRequest:{
-  "body": "I don't who you are!"
+  "values": ["paymentAddress", "username"]
 }
 ```
 
