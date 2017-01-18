@@ -27,7 +27,7 @@ There are 6 top-level types/schemas:
 
 ### SOFA::Message
 
-SOFA::Message is the general use schema that provides all the common messaging functionality.
+SOFA::Message is the general-use schema that provides all common messaging functionality.
 All top-level keys are optional. The structure is as follows:
 
 ```javascript
@@ -38,7 +38,7 @@ All top-level keys are optional. The structure is as follows:
       "type": "…", // supported types: button, group
       "label": "…", // displayed button text
       "value": …, // underlying value sent by tapping button
-      "echo": …, // boolean, adds the label value to conversation as a text message when true
+      "echo": …, // boolean, when true, tapping the button will add the label value to the conversation as if you had typed/sent it by hand
       "controls": …, //nested list of controls inside type "group"
     }
   ],
@@ -199,7 +199,7 @@ SOFA::PaymentStatusChange:{
 
 
 
-## Public Manifest
+## Public App Manifest
 
 SOFA clients that are intended to accept communications publicly (such as a chatbot app)
 should provide a JSON manifest publicly available via HTTP GET request. This manifest is
