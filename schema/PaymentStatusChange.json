@@ -15,9 +15,9 @@
       "description": "Transaction hash"
     },
     "value": {
-      "type": "number",
+      "type": "string",
       "title": "Value",
-      "description": "Value of transaction"
+      "description": "Value of payment denominated in Wei and hex encoded"
     }
   },
   "required": [

@@ -10,9 +10,9 @@
       "description": "Text memo accompanying the request"
     },
     "value": {
-      "type": "number",
+      "type": "string",
       "title": "Value",
-      "description": "Value of transaction in given currency (fractional numbers allowed)"
+      "description": "Value of payment denominated in Wei and hex encoded"
     },
     "destinationAddress": {
       "type": "string",

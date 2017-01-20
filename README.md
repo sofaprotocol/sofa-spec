@@ -169,12 +169,13 @@ SOFA::InitRequest:{
 ### SOFA::PaymentRequest
 
 Request money from message recipient. This message contains all information required
-to execute payment if approved by recipient.
+to execute payment if approved by recipient. Value is always denominated in Wei and
+hex encoded.
 
 ```json
 SOFA::PaymentRequest:{
   "body": "Thanks for the great time! Can you send your share of the tab?",
-  "value": 0.01,
+  "value": "0xce0eb154f900000",
   "destinationAddress": "0x056db290f8ba3250ca64a45d16284d04bc6f5fbf"
 }
 ```
@@ -190,7 +191,7 @@ to check the validity of the transaction/status on the Ethereum network.
 SOFA::PaymentStatusChange:{
   "status": "pending",
   "txHash": "0x...",
-  "value": "0.01"
+  "value": "0xce0eb154f900000"
 }
 ```
 
