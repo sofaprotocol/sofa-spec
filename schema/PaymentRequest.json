@@ -4,10 +4,10 @@
   "title": "PaymentRequest",
   "description": "Request an Ethereum payment",
   "properties": {
-    "currency": {
+    "body": {
       "type": "string",
-      "title": "Currency",
-      "description": "ISO 4217 currency code. Specifies the denomination of request value."
+      "title": "Body",
+      "description": "Text memo accompanying the request"
     },
     "value": {
       "type": "number",
@@ -18,17 +18,10 @@
       "type": "string",
       "title": "Destination Address",
       "description": "Ethereum address of recipient"
-    },
-    "senderAddress": {
-      "type": "string",
-      "title": "Sender Address",
-      "description": "Ethereum address of sender"
     }
   },
   "required": [
-    "currency",
     "value",
-    "destinationAddress",
-    "senderAddress"
+    "destinationAddress"
   ]
 }

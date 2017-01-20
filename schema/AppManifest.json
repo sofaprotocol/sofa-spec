@@ -9,13 +9,10 @@
       "title": "Display Name",
       "description": "Human-readable app name"
     },
-    "versions": {
-      "type": "array",
-      "title": "Versions",
-      "description": "List of supported SOFA versions",
-      "items": {
-        "type": "string"
-      }
+    "protocol": {
+      "type": "string",
+      "title": "Protocol",
+      "description": "Version of SOFA protocol in use by app"
     },
     "avatarUrl": {
       "type": "string",
@@ -23,16 +20,26 @@
       "description": "URL of image to be used as app icon/avatar"
     },
     "interfaces": {
-      "type": "array",
       "title": "Interfaces",
-      "description": "List of user interfaces supported by this app",
+      "description": "List of interfaces supported by this app",
+      "type": "array",
+      "enum": [
+        "ChatBot",
+        "WebApp"
+      ],
       "items": {
-        "type": "string",
-        "enum": [
-          "ChatBot",
-          "WebView"
-        ]
+        "type": "string"
       }
+    },
+    "ethereumAddress": {
+      "title": "Ethereum Address",
+      "description": "Ethereum address used for Token Chat Bot id",
+      "type": "string"
+    },
+    "webApp": {
+      "title": "Web App",
+      "description": "URI for DApp/Token App web view ",
+      "type": "string"
     },
     "languages": {
       "type": "array",
@@ -41,25 +48,14 @@
       "items": {
         "type": "string"
       }
-    },
-    "ethereumAddress": {
-      "type": "string",
-      "title": "Ethereum Address",
-      "description": "Ethereum address of app"
-    },
-    "requiresIntroduction": {
-      "type": "boolean",
-      "title": "Requires Introduction",
-      "description": "Flag indicating whether client must first send Initialization message"
     }
   },
   "required": [
     "displayName",
-    "versions",
+    "protocol",
     "avatarUrl",
     "interfaces",
-    "languages",
     "ethereumAddress",
-    "requiresIntroduction"
+    "languages"
   ]
 }

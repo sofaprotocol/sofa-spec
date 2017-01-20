@@ -16,9 +16,8 @@ The prefix takes the form:
 There are 6 top-level types/schemas:
 
 - **SOFA::Message** - The general use message type that encapsulates any combination of plain text, buttons, and image/video/link attachments
-- **SOFA::Command** - Arbitrary command sent silently as the result of a button press
-- **SOFA::Initialize** - Initializes the recipient with metadata about the sender
-- **SOFA::InitializationRequest** - Triggers the recipient client to reply with an Initialize message
+- **SOFA::Init** - Initializes the recipient with metadata about the sender
+- **SOFA::InitRequest** - Triggers the recipient client to reply with an Init message
 - **SOFA::PaymentRequest** - Requests an Ethereum transaction from the recipient
 - **SOFA::PaymentStatusChange** - Notifies the recipient of an expected Ethereum transaction status change
 
@@ -41,6 +40,7 @@ All top-level keys are optional. The structure is as follows:
       "controls": …, //nested list of controls inside type "group"
     }
   ],
+  "hidden": …, // when true, the message body is not shown in chat history, ex. to hide button press messages
   "showKeyboard": …, // hints to the recipient whether freeform text responses will be accepted
   "attachments": [ // images/videos/urls
      {
@@ -134,32 +134,34 @@ SOFA::Message:{
 Message sent by client in which the user has tapped a button whose value is "timetable":
 ```json
 SOFA::Command:{
+  "body": "Timetable",
   "value": "timetable"
 }
 ```
 
 
-### SOFA::Initialize
+### SOFA::Init
 
 When a client speaks to a SOFA app for the first time, the first message should be
-of type Initialize, which provides context for the bot about who it is speaking to.
+of type Init, which provides context for the bot about who it is speaking to.
 
 ```json
-SOFA::Initialize:{
-  "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a"
+SOFA::Init:{
+  "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a",
+  "language": "en"
 }
 ```
 
 
-### SOFA::InitializationRequest
+### SOFA::InitRequest
 
-If an Initialize message has not been sent, or needs to be re-sent, a bot may send
-an InitializationRequest message, which should trigger the client to send an Initialize
+If an Init message has not been sent, or needs to be re-sent, a bot may send
+an InitRequest message, which should trigger the client to send an Init
 message containing the requested information.
 
 ```json
-SOFA::InitializationRequest:{
-  "values": ["paymentAddress"]
+SOFA::InitRequest:{
+  "values": ["paymentAddress", "language"]
 }
 ```
 
@@ -171,8 +173,7 @@ to execute payment if approved by recipient.
 
 ```json
 SOFA::PaymentRequest:{
-  "body": "Thanks for the great time! Can you send $10 for the tab?",
-  "currency": "USD",
+  "body": "Thanks for the great time! Can you send your share of the tab?",
   "value": 0.01,
   "destinationAddress": "0x056db290f8ba3250ca64a45d16284d04bc6f5fbf"
 }
@@ -204,14 +205,14 @@ should provide a JSON manifest publicly available via HTTP GET request. This man
 used by browsers to decide how to present your SOFA app to the user.
 
 Example manifest:
-```json
+```javascript
 {
   "displayName": "TokenBot",
-  "versions": ["sofaV1"],
-  "avatarUrl": "http://static-assets.tokenapp.com/avatar.png",
-  "interfaces": ["Chatbot"],
-  "languages": ["en"],
-  "ethereumAddress": "0x...",
-  "requiresIntroduction": true
+  "protocol": "sofa-v1.0", //version of SOFA protocol
+  "avatarUrl": "https://static-assets.tokenapp.com/avatar.png",
+  "interfaces": ["ChatBot","WebApp"], // list of supported interfaces
+  "ethereumAddress": "0x...", // ethereum address of chat bot
+  "webApp": "https://tokenapp.com", // optional, URI of web view
+  "languages": ["en"] // list of supported languages
 }
 ```

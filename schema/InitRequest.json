@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA::InitRequest",
+  "description": "Sent by automated clients if first message recieved from contact is not Init.",
+  "properties": {
+    "values": {
+      "type": "array",
+      "title": "Values",
+      "description": "Values required in the Initialize response",
+      "enum": [
+        "paymentAddress",
+        "language"
+      ]
+    }
+  },
+  "required": [
+  ]
+}

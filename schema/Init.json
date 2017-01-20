@@ -1,13 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "SOFA::Initialize",
+  "title": "SOFA::Init",
   "description": "The first message a client should send to an automated partner.",
   "properties": {
     "paymentAddress": {
       "type": "string",
       "title": "Payment Address",
       "description": "Ethereum address to be used for transactions. May differ from chat address."
+    },
+    "language": {
+      "type": "string",
+      "title": "Language",
+      "description": "Preferred language of the sender"
     }
   },
   "required": [
