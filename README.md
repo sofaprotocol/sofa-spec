@@ -16,6 +16,7 @@ The prefix takes the form:
 There are 6 top-level types/schemas:
 
 - **SOFA::Message** - The general use message type that encapsulates any combination of plain text, buttons, and image/video/link attachments
+- **SOFA::Command** - Arbitrary command sent silently as the result of a button press
 - **SOFA::Init** - Initializes the recipient with metadata about the sender
 - **SOFA::InitRequest** - Triggers the recipient client to reply with an Init message
 - **SOFA::PaymentRequest** - Requests an Ethereum transaction from the recipient
@@ -40,7 +41,6 @@ All top-level keys are optional. The structure is as follows:
       "controls": …, //nested list of controls inside type "group"
     }
   ],
-  "hidden": …, // when true, the message body is not shown in chat history, ex. to hide button press messages
   "showKeyboard": …, // hints to the recipient whether freeform text responses will be accepted
   "attachments": [ // images/videos/urls
      {
