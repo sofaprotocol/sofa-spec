@@ -19,8 +19,8 @@ There are 6 top-level types/schemas:
 - **SOFA::Command** - Arbitrary command sent silently as the result of a button press
 - **SOFA::Init** - Initializes the recipient with metadata about the sender
 - **SOFA::InitRequest** - Triggers the recipient client to reply with an Init message
+- **SOFA::Payment** - Informs the recipient of an Ethereum transaction
 - **SOFA::PaymentRequest** - Requests an Ethereum transaction from the recipient
-- **SOFA::PaymentStatusChange** - Notifies the recipient of an expected Ethereum transaction status change
 
 
 ## Usage Examples
@@ -166,6 +166,22 @@ SOFA::InitRequest:{
 ```
 
 
+### SOFA::Payment
+
+Notification of an Ethereum transaction. Only trustworthy when coming from
+a trusted source. Will often be sent multiple times, each time the status
+changes.
+
+```json
+SOFA::Payment:{
+  "status": "unverified",
+  "txHash": "0x...",
+  "value": "0xce0eb154f900000"
+}
+```
+
+
+
 ### SOFA::PaymentRequest
 
 Request money from message recipient. This message contains all information required
@@ -181,19 +197,6 @@ SOFA::PaymentRequest:{
 ```
 
 
-### SOFA::PaymentStatusChange
-
-Notification of status change for Ethereum transaction. Only trustworthy when coming from
-a trusted source. It is still useful from untrusted sources for triggering the recipient
-to check the validity of the transaction/status on the Ethereum network.
-
-```json
-SOFA::PaymentStatusChange:{
-  "status": "pending",
-  "txHash": "0x...",
-  "value": "0xce0eb154f900000"
-}
-```
 
 
 
