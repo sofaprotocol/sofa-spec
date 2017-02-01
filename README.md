@@ -139,20 +139,6 @@ SOFA::Command:{
 }
 ```
 
-
-### SOFA::Init
-
-When a client speaks to a SOFA app for the first time, the first message should be
-of type Init, which provides context for the bot about who it is speaking to.
-
-```json
-SOFA::Init:{
-  "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a",
-  "language": "en"
-}
-```
-
-
 ### SOFA::InitRequest
 
 If an Init message has not been sent, or needs to be re-sent, a bot may send
@@ -165,6 +151,17 @@ SOFA::InitRequest:{
 }
 ```
 
+### SOFA::Init
+
+When a client speaks to a SOFA app for the first time, the first message should be
+of type Init, which provides context for the bot about who it is speaking to.
+
+```json
+SOFA::Init:{
+  "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a",
+  "language": "en"
+}
+```
 
 ### SOFA::Payment
 
