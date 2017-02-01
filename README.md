@@ -139,6 +139,18 @@ SOFA::Command:{
 }
 ```
 
+### SOFA::InitRequest
+
+If an Init message has not been sent, or needs to be re-sent, a bot may send
+an InitRequest message, which should trigger the client to send an Init
+message containing the requested information.
+
+```json
+SOFA::InitRequest:{
+  "values": ["paymentAddress", "language"]
+}
+```
+
 
 ### SOFA::Init
 
@@ -149,19 +161,6 @@ of type Init, which provides context for the bot about who it is speaking to.
 SOFA::Init:{
   "paymentAddress": "0xa2a0134f1df987bc388dbcb635dfeed4ce497e2a",
   "language": "en"
-}
-```
-
-
-### SOFA::InitRequest
-
-If an Init message has not been sent, or needs to be re-sent, a bot may send
-an InitRequest message, which should trigger the client to send an Init
-message containing the requested information.
-
-```json
-SOFA::InitRequest:{
-  "values": ["paymentAddress", "language"]
 }
 ```
 
@@ -218,5 +217,6 @@ Example manifest:
   "ethereumAddress": "0x...", // ethereum address of chat bot
   "webApp": "https://tokenapp.com", // optional, URI of web view
   "languages": ["en"] // list of supported languages
+  "initRequest": {"values": ["paymentAddress", "language"]} // hint to client that an Init message should be sent automatically when the app is opened
 }
 ```
