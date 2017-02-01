@@ -17,8 +17,8 @@ There are 6 top-level types/schemas:
 
 - **SOFA::Message** - The general use message type that encapsulates any combination of plain text, buttons, and image/video/link attachments
 - **SOFA::Command** - Arbitrary command sent silently as the result of a button press
-- **SOFA::Init** - Initializes the recipient with metadata about the sender
-- **SOFA::InitRequest** - Triggers the recipient client to reply with an Init message
+- **SOFA::InitRequest** - Requests metadata from the recipient client. Data is then sent using an Init message
+- **SOFA::Init** - Sends requested metadata from InitRequest
 - **SOFA::Payment** - Informs the recipient of an Ethereum transaction
 - **SOFA::PaymentRequest** - Requests an Ethereum transaction from the recipient
 
