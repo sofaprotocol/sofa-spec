@@ -48,6 +48,23 @@
       "items": {
         "type": "string"
       }
+    },
+    "initRequest": {
+      "title": "Init Request",
+      "description": "A hint to a client that an Init message should be sent automatically when the app is opened",
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "enum": [
+            "paymentAddress",
+            "language"
+          ]
+        }
+      }
     }
   },
   "required": [

@@ -14,8 +14,5 @@
       "title": "Language",
       "description": "Preferred language of the sender"
     }
-  },
-  "required": [
-    "paymentAddress"
-  ]
+  }
 }
