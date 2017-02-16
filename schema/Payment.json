@@ -7,7 +7,8 @@
     "status": {
       "type": "string",
       "title": "Status",
-      "description": "New status of Ethereum transaction"
+      "description": "New status of Ethereum transaction",
+      "enum": ["confirmed", "unconfirmed", "error"]
     },
     "txHash": {
       "type": "string",

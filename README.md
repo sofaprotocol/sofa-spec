@@ -173,7 +173,7 @@ changes.
 
 ```json
 SOFA::Payment:{
-  "status": "unverified",
+  "status": "unconfirmed",
   "txHash": "0x...",
   "value": "0xce0eb154f900000"
 }
