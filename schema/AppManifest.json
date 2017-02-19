@@ -31,14 +31,19 @@
         "type": "string"
       }
     },
-    "ethereumAddress": {
-      "title": "Ethereum Address",
-      "description": "Ethereum address used for Token Chat Bot id",
+    "ownerAddress": {
+      "title": "Owner Address",
+      "description": "Ethereum address used to identify your app",
+      "type": "string"
+    },
+    "paymentAddress": {
+      "title": "Payment Address",
+      "description": "Ethereum address used for eth transactions",
       "type": "string"
     },
     "webApp": {
       "title": "Web App",
-      "description": "URI for DApp/Token App web view ",
+      "description": "URI for your apps web view ",
       "type": "string"
     },
     "languages": {
@@ -72,7 +77,8 @@
     "protocol",
     "avatarUrl",
     "interfaces",
-    "ethereumAddress",
+    "ownerAddress",
+    "paymentAddress",
     "languages"
   ]
 }

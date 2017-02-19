@@ -1,10 +1,15 @@
-# SOFA Spec
+# Simple Open Financial App (SOFA) Protocol
 
-SOFA describes message schemas that provide standard message and attachment structures,
-simple UI controls, and commands for interactions with the Ethereum network.
+The SOFA protocol lets you quickly develop financial applications. It is a JSON protocol that provides standard message and attachment structures, simple UI controls, and commands to interact with the Ethereum network.
 
-In the context of Token, these messages are sent between users, or between users and bots.
+SOFA apps are chat bots (with dynamically generated buttons, menus, etc) but they can also have web views for more complex interactions.
 
+For example, see [Creating a Token App](http://developers.tokenbrowser.com/docs/creating-a-token-app).
+
+## Example Interactions
+
+![example1](https://i.imgur.com/VXOyrDl.png)
+![example1](https://i.imgur.com/muzf1Qi.jpg)
 
 ## Messages
 
@@ -175,7 +180,9 @@ changes.
 SOFA::Payment:{
   "status": "unconfirmed",
   "txHash": "0x...",
-  "value": "0xce0eb154f900000"
+  "value": "0xce0eb154f900000",
+  "fromAddress": "0x...",
+  "toAddress": "0x..."
 }
 ```
 
@@ -214,7 +221,8 @@ Example manifest:
   "protocol": "sofa-v1.0", //version of SOFA protocol
   "avatarUrl": "https://static-assets.tokenapp.com/avatar.png",
   "interfaces": ["ChatBot","WebApp"], // list of supported interfaces
-  "ethereumAddress": "0x...", // ethereum address of chat bot
+  "ownerAddress": "0x...", // ethereum address of chat bot
+  "paymentAddress": "0x...", // ethereum address for eth transactions
   "webApp": "https://tokenapp.com", // optional, URI of web view
   "languages": ["en"] // list of supported languages
   "initRequest": {"values": ["paymentAddress", "language"]} // hint to client that an Init message should be sent automatically when the app is opened

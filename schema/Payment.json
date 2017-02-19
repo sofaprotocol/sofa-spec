@@ -19,6 +19,16 @@
       "type": "string",
       "title": "Value",
       "description": "Value of payment denominated in Wei and hex encoded"
+    },
+    "fromAddress": {
+      "type": "string",
+      "title": "From Address",
+      "description": "Ethereum address of sender"
+    },
+    "toAddress": {
+      "type": "string",
+      "title": "To Address",
+      "description": "Ethereum address of recipient"
     }
   },
   "required": [
