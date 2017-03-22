@@ -23,11 +23,28 @@
     "attachments": {
       "type": "array",
       "title": "Attachments",
-      "description": "List image/video/url attachments"
+      "description": "List of image/video/url attachments",
+      "items": {"$ref": "#/definitions/attachment"}
     }
   },
 
   "definitions": {
+    "attachment": {
+      "type": "object",
+      "title": "Attachment",
+      "properties": {
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "MIME type of attachment"
+        },
+        "url": {
+          "type": "string",
+          "title": "URL",
+          "description": "Path/URL of attachment (context dependent on implementation)"
+        }
+      }
+    },
     "control": {
       "type": "object",
       "title": "Control",

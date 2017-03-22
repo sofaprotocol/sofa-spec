@@ -49,7 +49,7 @@ All top-level keys are optional. The structure is as follows:
   "showKeyboard": …, // hints to the recipient whether freeform text responses will be accepted
   "attachments": [ // images/videos/urls
      {
-       "type": "image",
+       "type": "image/jpeg",
        "url": "…"
      }
   ]
