@@ -102,17 +102,17 @@ SOFA::Message:{
       "type": "group",
       "label": "Trip",
       "controls": [
-        {"type": "button", "label": "Directions", "action": "Webview:/Directions"},
+        {"type": "button", "label": "Directions", "action": "Webview::http://mydapp.com/directions"},
         {"type": "button", "label": "Timetable", "value": "timetable"},
         {"type": "button", "label": "Exit Info", "value": "exit"},
-        {"type": "button", "label": "Service Conditions", "action": "Webview:/ServiceConditions"}
+        {"type": "button", "label": "Service Conditions", "action": "Webview::http://mydapp.com/service-conditions"}
       ]
     },
     {
       "type": "group",
       "label": "Services",
       "controls": [
-        {"type": "button", "label": "Buy Ticket", "action": "buy-ticket"},
+        {"type": "button", "label": "Buy Ticket", "action": "Webview::http://mydapp.com/buy-ticket"},
         {"type": "button", "label": "Support", "value": "support"}
       ]
     },
