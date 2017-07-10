@@ -29,6 +29,19 @@
       "type": "string",
       "title": "To Address",
       "description": "Ethereum address of recipient"
+    },
+    "networkId": {
+      "type": "string",
+      "title": "Network ID",
+      "description": "ID of network on which Payment was sent - see https://github.com/ethereum/wiki/wiki/JSON-RPC#net_version",
+      "enum": [
+        null,
+        "1",
+        "2",
+        "3",
+        "4",
+        "42"
+      ]
     }
   },
   "required": [
