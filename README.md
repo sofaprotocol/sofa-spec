@@ -182,7 +182,8 @@ SOFA::Payment:{
   "txHash": "0x...",
   "value": "0xce0eb154f900000",
   "fromAddress": "0x...",
-  "toAddress": "0x..."
+  "toAddress": "0x...",
+  "reference": "42"
 }
 ```
 
@@ -201,6 +202,9 @@ SOFA::PaymentRequest:{
   "destinationAddress": "0x056db290f8ba3250ca64a45d16284d04bc6f5fbf"
 }
 ```
+
+An optional string reference `reference` can be added to the payment request in order to
+keep track of payments and purchases.
 
 
 
