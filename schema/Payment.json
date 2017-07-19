@@ -29,6 +29,11 @@
       "type": "string",
       "title": "To Address",
       "description": "Ethereum address of recipient"
+    },
+    "reference": {
+      "type": "string",
+      "title": "Reference",
+      "description": "Reference"
     }
   },
   "required": [
