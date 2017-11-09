@@ -4,7 +4,7 @@ The SOFA protocol lets you quickly develop financial applications. It is a JSON 
 
 SOFA apps are chat bots (with dynamically generated buttons, menus, etc) but they can also have web views for more complex interactions.
 
-For example, see [Creating a Token App](http://developers.tokenbrowser.com/docs/creating-a-token-app).
+For example, see [Creating a Token App](http://developers.toshi.org/docs/creating-a-token-app).
 
 ## Example Interactions
 
