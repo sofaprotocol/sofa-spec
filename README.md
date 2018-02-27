@@ -18,7 +18,7 @@ The prefix takes the form:
 
 `SOFA::Type:`
 
-There are 6 top-level types/schemas:
+There are 7 top-level types/schemas:
 
 - **SOFA::Message** - The general use message type that encapsulates any combination of plain text, buttons, and image/video/link attachments
 - **SOFA::Command** - Arbitrary command sent silently as the result of a button press
@@ -26,6 +26,7 @@ There are 6 top-level types/schemas:
 - **SOFA::Init** - Sends requested metadata from InitRequest
 - **SOFA::Payment** - Informs the recipient of an Ethereum transaction
 - **SOFA::PaymentRequest** - Requests an Ethereum transaction from the recipient
+- **SOFA::GroupUpdate** - Sends information about group updates
 
 
 ## Usage Examples
@@ -202,11 +203,26 @@ SOFA::PaymentRequest:{
 }
 ```
 
+### SOFA::GroupUpdate
 
+Send updates about a group.
 
+```json
+SOFA::GroupUpdate:{
+  "groupId": "e9810a081828734abb36caaf1ca039c2",
+  "event": "added",
+  "details": {
+    "members": ["0x056db290f8ba3250ca64a45d16284d04bc6f5fbf"]
+  }
+}
+```
 
-
-
+Valid `event`s:
+ - `added` - One or more users were added to the group. `details` contains the list of `members` added to the group.
+ - `left` - One or more users left the group. `details` contains the list of `members` that the left the group.
+ - `renamed` - The group was renamed. `details` contains `originalName` as the old name and `name` as the new name.
+ - `created` - The group was created. `details` contains `name` and `members`.
+ - `quit` - The sender of the message quite the group.
 
 ## Public App Manifest
 

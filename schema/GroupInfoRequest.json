@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA::GroupInfoRequest",
+  "description": "Requests the details of a group",
+  "properties": {
+    "groupId": {
+      "type": "string",
+      "title": "Group ID",
+      "description": "The ID of the group"
+    }
+  }
+}

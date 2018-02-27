@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "SOFA::GroupUpdate",
+  "description": "Provides details of group related updates",
+  "properties": {
+    "groupId": {
+      "type": "string",
+      "title": "Group ID",
+      "description": "The ID of the group"
+    },
+    "event": {
+      "type": "string",
+      "title": "Event",
+      "description": "The type of update",
+      "enum": ["created", "quit", "left", "added", "renamed", "updatedAvatar"]
+    },
+    "details": {
+      "type": "object",
+      "title": "Details",
+      "description": "Group update event details",
+      "properties": {
+        "members": {
+          "type": "array",
+          "title": "Members",
+          "description": "List of group members effected by the event"
+        },
+        "originalName": {
+          "type": "string",
+          "title": "Original Name",
+          "description": "The name of the group before a 'renamed' event"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The group name"
+        }
+      }
+    }
+  }
+}
