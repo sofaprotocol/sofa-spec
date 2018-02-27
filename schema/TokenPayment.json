@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TokenPayment",
+  "description": "Notification of an ERC20 Token payment",
+  "properties": {
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "description": "New status of the token transfer",
+      "enum": ["confirmed", "unconfirmed", "error"]
+    },
+    "txHash": {
+      "type": "string",
+      "title": "Tx Hash",
+      "description": "Hash of the transaction that facilitated the transfer"
+    },
+    "value": {
+      "type": "string",
+      "title": "Value",
+      "description": "Value of payment hex encoded"
+    },
+    "fromAddress": {
+      "type": "string",
+      "title": "From Address",
+      "description": "Ethereum address of sender"
+    },
+    "toAddress": {
+      "type": "string",
+      "title": "To Address",
+      "description": "Ethereum address of recipient"
+    },
+    "contractAddress": {
+      "type": "string",
+      "title": "Contract Address",
+      "description": "Ethereum address of erc20 token"
+    }
+  },
+  "required": [
+    "value",
+    "contractAddress"
+  ]
+}
