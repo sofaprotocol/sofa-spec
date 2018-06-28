@@ -18,6 +18,11 @@
       "type": "string",
       "title": "Destination Address",
       "description": "Ethereum address of recipient"
+    },
+    "networkId": {
+      "type": "string",
+      "title": "Network Id",
+      "description": "Ethereum network Id that the request is for"
     }
   },
   "required": [
